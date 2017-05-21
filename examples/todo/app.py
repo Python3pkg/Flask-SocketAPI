@@ -44,7 +44,7 @@ def get_todo(id_):
 @socketapi.resource_patcher('/todo/<id_>')
 def patch_todo(id_, patch):
     global todos
-    for attribute, value in patch.items():
+    for attribute, value in list(patch.items()):
         setattr(todos[id_], attribute, value)
 
 

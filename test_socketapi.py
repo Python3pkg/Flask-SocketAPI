@@ -125,7 +125,7 @@ class TestSocketAPI(unittest.TestCase):
         })
 
         self.assertEqual(len(apples), 1)
-        self.assertIn({'foo': 0, 'bar': 'koala'}, apples.values())
+        self.assertIn({'foo': 0, 'bar': 'koala'}, list(apples.values()))
 
         apples.clear()
 
@@ -156,7 +156,7 @@ class TestSocketAPI(unittest.TestCase):
         })
 
         self.assertEqual(len(apples), 1)
-        self.assertNotIn({'foo': 0, 'bar': 'koala'}, apples.values())
+        self.assertNotIn({'foo': 0, 'bar': 'koala'}, list(apples.values()))
 
         apples.clear()
 
